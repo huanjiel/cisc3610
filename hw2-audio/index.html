@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<audio id="catAudio">
+		<source src="cat.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+	</audio>
+	<audio id="dogAudio">
+		<source src="dog.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+	</audio>
+	<audio id="birdAudio">
+		<source src="bird.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+	</audio>
+	<audio id="mouseAudio">
+		<source src="mouse.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+	</audio>
+	<audio id="wolfAudio">
+		<source src="wolf.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+	</audio>
+
+	<script>
+		function playAudio(id) {
+  		var audio = document.getElementById(id);
+  		audio.play();
+		}
+		function pauseAudio(id) {
+  		var audio = document.getElementById(id);
+  		audio.pause();
+		}
+	</script>
+</head>
+
+<body>
+	<h1>Click the buttons to play or pause the audio.</h1>
+	<button onclick="playAudio('catAudio')" type="button">Cat</button>
+	<button onclick="pauseAudio('catAudio')" type="button">Pause Cat</button><br>
+	<button onclick="playAudio('dogAudio')" type="button">Dog</button>
+	<button onclick="pauseAudio('dogAudio')" type="button">Pause Dog</button><br>
+	<button onclick="playAudio('wolfAudio')" type="button">Wolf</button>
+	<button onclick="pauseAudio('wolfAudio')" type="button">Pause Wolf</button><br>
+	<button onclick="playAudio('birdAudio')" type="button">Bird</button>
+	<button onclick="pauseAudio('birdAudio')" type="button">Pause Bird</button><br>
+	<button onclick="playAudio('mouseAudio')" type="button">Mouse</button>
+	<button onclick="pauseAudio('mouseAudio')" type="button">Pause Mouse</button>
+
+	<h1>Using Image Map: Click on the animal you want to hear</h1>
+
+	<img src="play.jpg" alt="animals" usemap="#workmap" width="750" height="300">
+
+	<map name="workmap">
+		<area shape="rect" coords="0,0,150,300" alt="wolf" onclick="playAudio('wolfAudio')">
+		<area shape="rect" coords="150,0,300,300" alt="bird" onclick="playAudio('birdAudio')">	
+		<area shape="rect" coords="300,0,450,300" alt="mouse" onclick="playAudio('mouseAudio')">	
+		<area shape="rect" coords="450,0,600,300" alt="cat" onclick="playAudio('catAudio')">	
+		<area shape="rect" coords="600,0,750,300" alt="dog" onclick="playAudio('dogAudio')">	
+	</map>
+	<br><a href="../index.html">Back to Home Page</a>
+</body>
+</html>

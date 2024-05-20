@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Data Visualization</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: sans-serif;
+        }
+        .chart-container {
+            width: 50%;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Visualization</h1>
+    <div class="chart-container">
+        <canvas id="doughnutChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <canvas id="barChart"></canvas>
+    </div>
+
+    <script>
+        var fruit = [
+            {name: "Apple", quantity: 20, color: "red"},
+            {name: "Orange", quantity: 10, color: "orange"},
+            {name: "Banana", quantity: 15, color: "yellow"},
+            {name: "Kiwi", quantity: 5, color: "green"},
+            {name: "Blueberry", quantity: 5, color: "blue"},
+            {name: "Grapes", quantity: 10, color: "purple"}
+        ];
+
+        var doughnutData = {
+            labels: fruit.map(f => f.name),
+            datasets: [{
+                data: fruit.map(f => f.quantity),
+                backgroundColor: fruit.map(f => f.color),
+            }]
+        };
+
+        var barData = {
+            labels: fruit.map(f => f.name),
+            datasets: [{
+                data: fruit.map(f => f.quantity),
+                backgroundColor: fruit.map(f => f.color),
+            }]
+        };
+
+        var doughnutConfig = {
+            type: 'doughnut',
+            data: doughnutData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Fruits: Doughnut Chart'
+                    }
+                }
+            },
+        };
+
+        var barConfig = {
+            type: 'bar',
+            data: barData,
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                    title: {
+                        display: true,
+                        text: 'Fruits: Bar Chart'
+                    }
+                }
+            },
+        };
+
+        var doughnutChart = new Chart(
+            document.getElementById('doughnutChart'),
+            doughnutConfig
+        );
+        var barChart = new Chart(
+            document.getElementById('barChart'),
+            barConfig
+        );
+    </script>
+    <br><a href="../index.html">Back to Home Page</a><br>
+</body>
+</html>

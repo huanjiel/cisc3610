@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>BMI Calculator</title>
+</head>
+
+<body>
+    <div id="title1">
+        <h1>BMI Calculator</h1>
+    </div>
+    <div class="bg-img">
+        <form id="bmi-form" class="container">
+            <h1>BMI Calculator</h1>
+            
+            
+            <label for="feet"><b>Enter Your Height (feet)</b></label>
+            <input type="number" id="feet" required>
+
+            <label for="inches"><b>Enter Your Height (inches)</b></label>
+            <input type="number" id="inches" required>
+
+            <label for="weight"><b>Enter Your Weight (pounds)</b></label>
+            <input type="number" id="weight" required>
+
+            <label for="gender"><b>Gender</b></label>
+            <div class="gender-options">
+                <label><input type="radio" name="gender" value="male" id="male">Male</label>
+                <label><input type="radio" name="gender" value="female" id="female">Female</label>
+                <label><input type="radio" name="gender" value="non-binary" id="nb">Non-binary</label>
+            </div>
+
+            <button type="button" class="btn" onclick="calculateBMI()">Calculate</button>
+            <button type="button" class="btn" onclick="resetForm()">Reset</button>
+
+            <div id="result"></div>
+            <br><a href="../index.html">Back to Home Page</a>
+        </form>
+        
+    </div>
+</body>
+</html>
