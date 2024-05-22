@@ -8,6 +8,7 @@ self.addEventListener('install', (event) => {
         './service-worker.js',
         './icon-192x192.png',
         './icon-512x512.png',
+        './bg.jpg',
         './style.css',
         './script.js'
       ]);

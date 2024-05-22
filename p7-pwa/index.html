@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
@@ -10,7 +10,6 @@
     <script src="app.js"></script>
     <title>BMI Calculator</title>
 </head>
-
 <body>
     <div id="title1">
         <h1>BMI Calculator</h1>
@@ -20,27 +19,22 @@
             <h1>BMI Calculator</h1>
             <label for="feet"><b>Enter Your Height (feet)</b></label>
             <input type="number" id="feet" required>
-
             <label for="inches"><b>Enter Your Height (inches)</b></label>
             <input type="number" id="inches" required>
-
             <label for="weight"><b>Enter Your Weight (pounds)</b></label>
             <input type="number" id="weight" required>
-
             <label for="gender"><b>Gender</b></label>
             <div class="gender-options">
                 <label><input type="radio" name="gender" value="male" id="male">Male</label>
                 <label><input type="radio" name="gender" value="female" id="female">Female</label>
                 <label><input type="radio" name="gender" value="non-binary" id="nb">Non-binary</label>
             </div>
-
             <button type="button" class="btn" onclick="calculateBMI()">Calculate</button>
             <button type="button" class="btn" onclick="resetForm()">Reset</button>
-
             <div id="result"></div>
             <br><a href="../index.html">Back to Home Page</a>
             <br><button onclick="window.close();">Close Window</button>
-        </form>   
+        </form>
     </div>
 </body>
 </html>
